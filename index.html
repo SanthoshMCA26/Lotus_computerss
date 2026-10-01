@@ -308,6 +308,54 @@
       font-size: 0.95rem;
     }
 
+    .print-service-section {
+      margin-top: 44px;
+    }
+
+    .print-service-section h3 {
+      margin: 0 0 18px;
+      font-size: 1.35rem;
+      transition: color 180ms ease, text-decoration-color 180ms ease;
+    }
+
+    .print-service-section h3:hover {
+      color: var(--color-teal);
+      text-decoration: underline;
+      text-decoration-color: var(--color-coral);
+      text-underline-offset: 5px;
+    }
+
+    .print-service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .print-service-grid li {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-coral);
+      border-radius: 6px;
+      background: var(--color-white);
+      font-weight: 700;
+      line-height: 1.35;
+      transition: border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .print-service-grid li:hover {
+      border-color: #a9d2c7;
+      border-left-color: var(--color-teal);
+      box-shadow: 0 8px 18px rgba(24, 50, 56, 0.09);
+      color: var(--color-teal-dark);
+      transform: translateY(-3px);
+    }
+
     .process-section {
       color: var(--color-white);
       background: var(--color-ink);
@@ -436,6 +484,10 @@
       }
 
       .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .print-service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -686,6 +738,19 @@
             </div>
           </article>
         </div>
+
+        <section class="print-service-section" aria-labelledby="print-services-heading">
+          <h3 id="print-services-heading">Printing &amp; Design Services</h3>
+          <ul class="print-service-grid">
+            <li>Marriage Invitation</li>
+            <li>DC &amp; Bill Books</li>
+            <li>Letter pad</li>
+            <li>Memo &amp; Voucher</li>
+            <li>Visiting Card</li>
+            <li>Brochure &amp; Catalogs</li>
+            <li>Notice &amp; Flex Printing</li>
+          </ul>
+        </section>
       </div>
     </section>
 

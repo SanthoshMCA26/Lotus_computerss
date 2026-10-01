@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lotus Computers provides document, registration, driving, and online government services in Tiruppur.">
+  <title>Lotus Driving Institution</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.jpeg">
+
+  <style>
+    :root {
+      --color-ink: #183238;
+      --color-muted: #607276;
+      --color-teal: #087e78;
+      --color-teal-dark: #075e5a;
+      --color-coral: #ed7868;
+      --color-background: #f4f8f6;
+      --color-white: #ffffff;
+      --color-border: #dce8e4;
+      --content-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--color-ink);
+      background: var(--color-background);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: var(--color-white);
+      box-shadow: 0 2px 14px rgba(24, 50, 56, 0.08);
+    }
+
+    .header-content {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--color-ink);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 64px;
+      height: 64px;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .main-nav a {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .main-nav a:hover {
+      color: var(--color-teal);
+    }
+
+    .header-contact,
+    .button {
+      display: inline-block;
+      padding: 11px 19px;
+      border: 0;
+      border-radius: 7px;
+      color: var(--color-white);
+      background: var(--color-teal);
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .header-contact:hover,
+    .button:hover {
+      background: var(--color-teal-dark);
+      box-shadow: 0 5px 12px rgba(7, 94, 90, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0;
+      background: linear-gradient(120deg, #e3f4ee 0%, #f4f8f6 66%, #fff0e9 100%);
+    }
+
+    .hero,
+    .section[id] {
+      scroll-margin-top: 96px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .hero-label,
+    .section-label {
+      margin: 0 0 12px;
+      color: var(--color-teal);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+    }
+
+    .hero h1 span {
+      color: var(--color-coral);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 1.1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button-light {
+      color: var(--color-teal-dark);
+      background: var(--color-white);
+    }
+
+    .button-light:hover {
+      color: var(--color-white);
+    }
+
+    .hero-decoration {
+      position: absolute;
+      right: max(4%, calc((100% - var(--content-width)) / 2));
+      bottom: -90px;
+      width: 280px;
+      height: 280px;
+      border: 36px solid rgba(8, 126, 120, 0.08);
+      border-radius: 50%;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    .section-heading p,
+    .about-copy {
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .about-section {
+      background: var(--color-white);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-content .section-heading {
+      margin: 0;
+    }
+
+    .about-highlight {
+      padding: 26px;
+      border-left: 4px solid var(--color-coral);
+      border-radius: 0 10px 10px 0;
+      background: var(--color-background);
+    }
+
+    .about-highlight strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--color-teal);
+      font-size: 1.6rem;
+    }
+
+    .services-section {
+      background: var(--color-background);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      background: var(--color-white);
+      box-shadow: 0 4px 14px rgba(24, 50, 56, 0.04);
+      transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+    }
+
+    .service-card:hover {
+      border-color: #a9d2c7;
+      box-shadow: 0 12px 24px rgba(24, 50, 56, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .service-image {
+      display: block;
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      background: #e3f4ee;
+    }
+
+    .service-content {
+      padding: 22px;
+    }
+
+    .service-number {
+      display: inline-grid;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 16px;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--color-teal-dark);
+      background: #e3f4ee;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .service-card:nth-child(3n + 2) .service-number {
+      color: #a8453b;
+      background: #fff0e9;
+    }
+
+    .service-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+
+    .process-section {
+      color: var(--color-white);
+      background: var(--color-ink);
+    }
+
+    .process-section .section-label {
+      color: #91d9c8;
+    }
+
+    .process-section .section-heading h2 {
+      color: var(--color-white);
+    }
+
+    .process-section .section-heading p {
+      color: #c4d3d1;
+    }
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .process-step {
+      padding: 22px;
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+      transition: border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .process-step:hover {
+      border-color: var(--color-coral);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .step-number {
+      color: #91d9c8;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .process-step h3 {
+      margin: 12px 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: #c4d3d1;
+      font-size: 0.92rem;
+    }
+
+    .contact-section {
+      background: #e3f4ee;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      padding: 38px;
+      border-radius: 16px;
+      background: var(--color-white);
+      box-shadow: 0 12px 30px rgba(24, 50, 56, 0.08);
+    }
+
+    .contact-panel h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .contact-panel > div > p {
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .contact-details h3 {
+      margin: 0 0 6px;
+      color: var(--color-teal-dark);
+      font-size: 1rem;
+    }
+
+    .contact-details address {
+      margin-bottom: 16px;
+      color: var(--color-muted);
+      font-style: normal;
+    }
+
+    .contact-details ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-details a {
+      color: var(--color-teal-dark);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      padding: 22px 0;
+      color: #c4d3d1;
+      background: var(--color-ink);
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 800px) {
+      .main-nav {
+        gap: 14px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-content,
+      .contact-panel {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-decoration {
+        right: -110px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .header-content {
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+      }
+
+      .brand {
+        font-size: 1.05rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .main-nav a {
+        font-size: 0.84rem;
+      }
+
+      .header-contact {
+        padding: 9px 12px;
+        font-size: 0.88rem;
+      }
+
+      .hero,
+      .section[id] {
+        scroll-margin-top: 130px;
+      }
+
+      .hero {
+        padding: 68px 0;
+      }
+
+      .hero-decoration {
+        width: 190px;
+        height: 190px;
+        border-width: 24px;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .service-grid,
+      .process-list {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .contact-panel {
+        padding: 26px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="images/logo3.png" alt="Lotus logo" >
+        <span style="padding-top: 10px;">Driving Institution</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+      </nav>
+
+      <a class="header-contact" href="#contact">Contact Us</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="hero-label">Friendly local digital assistance</p>
+        <h1>Make the <span>paperwork</span> feel simple.</h1>
+        <p class="hero-description">
+          From identity documents and registrations to driving services,
+          Lotus Computers helps you take care of important tasks in Tiruppur.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#services">Explore Our Services</a>
+          <a class="button button-light" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-decoration" aria-hidden="true"></div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-content">
+        <div class="section-heading">
+          <p class="section-label">About Lotus</p>
+          <h2>Practical help for everyday needs.</h2>
+        </div>
+        <div>
+          <p class="about-copy">
+            Lotus Computers helps families and businesses with essential digital
+            services in Tiruppur. Our team can guide you through document
+            applications, online registrations, and driving-related services.
+          </p>
+          <div class="about-highlight">
+            <strong>Serving since 2004</strong>
+            <span>Local service with clear, friendly guidance.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Services Offered</p>
+          <h2>Many services. One convenient place.</h2>
+          <p>Get help with documents, registrations, driving services, and more.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <img class="service-image" src="images/ration_card.jpg" alt="Smart Ration Card" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">01</span>
+              <h3>Smart Ration Card Services</h3>
+              <p>Registration and printing of Smart Ration Cards.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Smart Plastic Card Printing.jpg" alt="Smart Ration Card" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">02</span>
+              <h3>Smart Plastic Card Printing</h3>
+              <p>High-quality plastic card printing for Aadhaar and Ration cards.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Aadhaar Card Updates.webp">
+            <div class="service-content">
+              <span class="service-number">03</span>
+              <h3>Aadhaar Card Updates</h3>
+              <p>Name, address, and mobile number corrections or updates.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/passport.jpeg" alt="Passport service document" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">04</span>
+              <h3>PAN Card and Passport Services</h3>
+              <p>Assistance with PAN card and passport applications.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Voter_id.jpeg" alt="Voter ID card" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">05</span>
+              <h3>Voter ID Registration and Correction</h3>
+              <p>New voter ID registration and corrections to existing details.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Using a laptop to complete online registrations" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">06</span>
+              <h3>Online Registrations</h3>
+              <p>Online form submissions and government service registrations.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/LLR2.png" alt="Learner's license registration" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">07</span>
+              <h3>LLR (Learner’s License Registration)</h3>
+              <p>Registration for 2-wheeler and 4-wheeler learner’s licenses.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/driving_training.jpeg" alt="Driving training" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">08</span>
+              <h3>Driving Training</h3>
+              <p>Practical and theory driving lessons for beginners.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Badge_licinces.jpeg" alt="Driver badge license" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">09</span>
+              <h3>Badge License Assistance</h3>
+              <p>Help in obtaining professional driver’s badge licenses.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Vehicle Insurance.png" alt="Vehicle insurance" width="900" height="200" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">10</span>
+              <h3>Vehicle Insurance</h3>
+              <p>Quick insurance service — completed within 5 minutes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">How It Works</p>
+          <h2>Simple steps. Helpful support.</h2>
+          <p>Bring your requirement and documents. We will help you from start to submission.</p>
+        </div>
+
+        <ol class="process-list">
+          <li class="process-step">
+            <span class="step-number">01</span>
+            <h3>Tell us what you need</h3>
+            <p>We will understand the service and details required.</p>
+          </li>
+          <li class="process-step">
+            <span class="step-number">02</span>
+            <h3>Prepare the details</h3>
+            <p>We will check your information and supporting documents.</p>
+          </li>
+          <li class="process-step">
+            <span class="step-number">03</span>
+            <h3>Submit with care</h3>
+            <p>We will complete and submit the forms online.</p>
+          </li>
+          <li class="process-step">
+            <span class="step-number">04</span>
+            <h3>Collect your result</h3>
+            <p>We will keep you updated until the service is complete.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-panel">
+        <div>
+          <p class="section-label">Contact Information</p>
+          <h2>Bring your next task to Lotus.</h2>
+          <p>Visit us in Veerapandi Pirivu, Tiruppur. We are ready to help.</p>
+        </div>
+
+        <div class="contact-details">
+          <h3>Address</h3>
+          <address>
+            588, Veerapandi Pirivu,<br>
+            Opposite R.T.O Office, Palladam Road,<br>
+            Tiruppur – 5, Tamil Nadu
+          </address>
+
+          <h3>Phone</h3>
+          <ul>
+            <li><a href="tel:+919171180123">91711 80123</a></li>
+            <li><a href="tel:+919344480123">93444 80123</a></li>
+            
+          </ul>
+
+          <h3>Email</h3>
+          <a href="mailto:lotuscomputerss@gmail.com">lotuscomputerss@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Lotus Driving Institution — Computer sales, service, and digital assistance in Tiruppur.</p>
+    </div>
+  </footer>
+</body>
+</html>

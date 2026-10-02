@@ -17,6 +17,8 @@
       --color-background: #f4f8f6;
       --color-white: #ffffff;
       --color-border: #dce8e4;
+      --color-header-bg: #eef9ee;
+      --color-header-accent: #dff3d4;
       --content-width: 1120px;
     }
 
@@ -49,7 +51,7 @@
       position: sticky;
       z-index: 10;
       top: 0;
-      background: var(--color-white);
+      background: linear-gradient(90deg, var(--color-header-accent) 0%, var(--color-white) 35%, #f6fff2 100%);
       box-shadow: 0 2px 14px rgba(24, 50, 56, 0.08);
     }
 
@@ -69,12 +71,13 @@
       font-size: 1.2rem;
       font-weight: 700;
       text-decoration: none;
+      padding: 8px 0;
     }
 
     .brand-logo {
       display: block;
-      width: 64px;
-      height: 64px;
+      width: min(260px, 52vw);
+      height: auto;
       flex: 0 0 auto;
       object-fit: contain;
     }
@@ -614,8 +617,7 @@
   <header class="site-header">
     <div class="container header-content">
       <a class="brand" href="#home">
-        <img class="brand-logo" src="images/logo3.png" alt="Lotus logo" >
-        <span style="padding-top: 10px;">Driving Institution</span>
+        <img class="brand-logo" src="images/logo2.png" alt="Lotus Driving Institution" >
       </a>
 
       <nav class="main-nav" aria-label="Main navigation">
@@ -676,63 +678,9 @@
 
         <div class="service-grid">
           <article class="service-card">
-            <img class="service-image" src="images/ration_card.jpg" alt="Smart Ration Card" width="900" height="600" loading="lazy">
-            <div class="service-content">
-              <span class="service-number">01</span>
-              <h3>Smart Ration Card Services</h3>
-              <p>Registration and printing of Smart Ration Cards.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img class="service-image" src="images/Smart Plastic Card Printing.jpg" alt="Smart Ration Card" width="900" height="600" loading="lazy">
-            <div class="service-content">
-              <span class="service-number">02</span>
-              <h3>Smart Plastic Card Printing</h3>
-              <p>High-quality plastic card printing for Aadhaar and Ration cards.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img class="service-image" src="images/Aadhaar Card Updates.webp">
-            <div class="service-content">
-              <span class="service-number">03</span>
-              <h3>Aadhaar Card Updates</h3>
-              <p>Name, address, and mobile number corrections or updates.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img class="service-image" src="images/passport.jpeg" alt="Passport service document" width="900" height="600" loading="lazy">
-            <div class="service-content">
-              <span class="service-number">04</span>
-              <h3>PAN Card and Passport Services</h3>
-              <p>Assistance with PAN card and passport applications.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img class="service-image" src="images/Voter_id.jpeg" alt="Voter ID card" width="900" height="600" loading="lazy">
-            <div class="service-content">
-              <span class="service-number">05</span>
-              <h3>Voter ID Registration and Correction</h3>
-              <p>New voter ID registration and corrections to existing details.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img class="service-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Using a laptop to complete online registrations" width="900" height="600" loading="lazy">
-            <div class="service-content">
-              <span class="service-number">06</span>
-              <h3>Online Registrations</h3>
-              <p>Online form submissions and government service registrations.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
             <img class="service-image" src="images/LLR2.png" alt="Learner's license registration" width="900" height="600" loading="lazy">
             <div class="service-content">
-              <span class="service-number">07</span>
+              <span class="service-number">01</span>
               <h3>LLR (Learner’s License Registration)</h3>
               <p>Registration for 2-wheeler and 4-wheeler learner’s licenses.</p>
             </div>
@@ -741,7 +689,7 @@
           <article class="service-card">
             <img class="service-image" src="images/driving_training.jpeg" alt="Driving training" width="900" height="600" loading="lazy">
             <div class="service-content">
-              <span class="service-number">08</span>
+              <span class="service-number">02</span>
               <h3>Driving Training</h3>
               <p>Practical and theory driving lessons for beginners.</p>
             </div>
@@ -750,7 +698,7 @@
           <article class="service-card">
             <img class="service-image" src="images/Badge_licinces.jpeg" alt="Driver badge license" width="900" height="600" loading="lazy">
             <div class="service-content">
-              <span class="service-number">09</span>
+              <span class="service-number">03</span>
               <h3>Badge License Assistance</h3>
               <p>Help in obtaining professional driver’s badge licenses.</p>
             </div>
@@ -759,9 +707,63 @@
           <article class="service-card">
             <img class="service-image" src="images/Vehicle Insurance.png" alt="Vehicle insurance" width="900" height="200" loading="lazy">
             <div class="service-content">
-              <span class="service-number">10</span>
+              <span class="service-number">04</span>
               <h3>Vehicle Insurance</h3>
               <p>Quick insurance service — completed within 5 minutes.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Aadhaar Card Updates.webp">
+            <div class="service-content">
+              <span class="service-number">05</span>
+              <h3>Aadhaar Card Updates</h3>
+              <p>Name, address, and mobile number corrections or updates.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/passport.jpeg" alt="Passport service document" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">06</span>
+              <h3>PAN Card and Passport Services</h3>
+              <p>Assistance with PAN card and passport applications.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/ration_card.jpg" alt="Smart Ration Card" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">07</span>
+              <h3>Smart Ration Card Services</h3>
+              <p>Registration and printing of Smart Ration Cards.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Smart Plastic Card Printing.jpg" alt="Smart Ration Card" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">08</span>
+              <h3>Smart Plastic Card Printing</h3>
+              <p>High-quality plastic card printing for Aadhaar and Ration cards.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="images/Voter_id.jpeg" alt="Voter ID card" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">09</span>
+              <h3>Voter ID Registration and Correction</h3>
+              <p>New voter ID registration and corrections to existing details.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img class="service-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Using a laptop to complete online registrations" width="900" height="600" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">10</span>
+              <h3>Online Registrations</h3>
+              <p>Online form submissions and government service registrations.</p>
             </div>
           </article>
         </div>
